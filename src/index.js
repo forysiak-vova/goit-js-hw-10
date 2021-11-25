@@ -11,16 +11,22 @@ input.addEventListener('input', debounce(onSearch, DEBOUNCE_DELAY));
 function onSearch(e) {
    e.preventDefault();
    const inputValue = e.target.value;
+   if (inputValue === '') {
+     return Notiflix.Notify.info('введи что то нормальное');
+    }
    fetchCountries(inputValue)
-      .then(x => console.log(x))
-      .catch(error => console.log(error))
+      .then(noFechSucces)
+      .catch(onFechError)
 }
       
+function noFechSucces(x) {
+   console.log(x)
+}
 
 
+function onFechError(error) {
+   //  Notiflix.Notify.failure('Oops, there is no country with that name')
+   console.log('Oops, there is no country with that name')
+}
 
-// function onFechError(error) {
-//     Notiflix.Notify.failure(`error`)
-// }
-
-fetch('https://restcountries.com/v2/all?fields=name,capital,population,flags,languages').then(response => response.json()).then(console.log)
+// fetch('https://restcountries.com/v2/all?pageSize=10&page=1&fields=name,capital,population,flags,languagesand').then(response => response.json()).then(console.log)
