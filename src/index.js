@@ -1,7 +1,11 @@
+import countriesHbs from './templates/countries.hbs'
+import countryHbs from './templates/country.hbs'
 import './css/styles.css';
 import debounce  from 'lodash.debounce';
 import Notiflix from 'notiflix';
-import {fetchCountries} from './fetchCountries'
+import { fetchCountries } from './fetchCountries'
+
+
 const DEBOUNCE_DELAY = 300;
 
 const input = document.querySelector('#search-box');
@@ -13,6 +17,7 @@ function onSearch(e) {
    const inputValue = e.target.value;
    if (inputValue === '') {
      return Notiflix.Notify.info('введи что то нормальное');
+
     }
    fetchCountries(inputValue)
       .then(noFechSucces)
@@ -25,7 +30,7 @@ function noFechSucces(x) {
 
 
 function onFechError(error) {
-   //  Notiflix.Notify.failure('Oops, there is no country with that name')
+    Notiflix.Notify.failure('Oops, there is no country with that name')
    console.log('Oops, there is no country with that name')
 }
 
