@@ -17,16 +17,29 @@ body {
   padding: 8px;
   max-width: 320px;
   margin-bottom: 16px;
+  /* margin-inline-start: 40px; */
 }
-.name-coutry {
+.name-coutries {
   align-items: center;
   justify-content: center;
   list-style: none;
-  font-size: 30px;
-  font-weight: 100;
 }
 /* .country-list {
   list-style: none;
   align-items: center;
   justify-content: center;
 } */
+.contries-name {
+  font-size: 30px;
+  font-weight: 400;
+}
+.contry-name {
+  font-size: 50px;
+  list-style: none;
+}
+.name-coutry {
+  list-style: none;
+}
+.contry-img {
+  margin-right: 10px;
+}
