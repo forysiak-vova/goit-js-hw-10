@@ -34,7 +34,6 @@ export function fetchCountries(name) {
     return response.json()
     })
       .then(data => {
-          console.log(data)
             if (data.status === 404) {
             throw new Error(data.status)
             } else {

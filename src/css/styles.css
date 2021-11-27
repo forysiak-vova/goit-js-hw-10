@@ -18,3 +18,15 @@ body {
   max-width: 320px;
   margin-bottom: 16px;
 }
+.name-coutry {
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  font-size: 30px;
+  font-weight: 100;
+}
+/* .country-list {
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+} */
