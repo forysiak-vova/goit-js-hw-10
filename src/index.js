@@ -42,23 +42,24 @@ function onFechSucces(contry) {
    }
    
    else if (contry.length >= 2 && contry.length <= 10) {
-      console.log(markup)
+     
       container.innerHTML = markup;
-      console.log(contry)
+     
      
    }
    
    else if (contry.length === 1) {
       container.innerHTML = markupContry;
-      console.log(contry)
-      console.log(contry)
+     
    
    } 
 }
 
+
+
 function onFechError(error) {
     Notiflix.Notify.failure('Oops, there is no country with that name')
-   console.log('Oops, there is no country with that name')
+
    container.innerHTML = '';
 }
 
