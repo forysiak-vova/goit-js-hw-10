@@ -36,15 +36,15 @@ function onFechSucces(contry) {
    const markup = countriesHbs(contry);
    const markupContry = countryHbs(contry);
    console.log(contry)
-   const res = contry.map(el =>
-      `<ul class = "list">
-      <img src= ${el.flags.png}/>
-      <h2>${el.name}</h2>
-      <li>  ${el.capital}  </li>
-      <li>${el.population}</li>
-      <li></li>
-      </ul>`)
-   console.log(res)
+   // const res = contry.map(el =>
+   //    `<ul class = "list">
+   //    <img src= ${el.flags.png}/>
+   //    <h2>${el.name}</h2>
+   //    <li>  ${el.capital}  </li>
+   //    <li>${el.population}</li>
+   //    <li></li>
+   //    </ul>`)
+   // console.log(res)
    
    if (contry.length > 10) {
       return Notiflix.Notify.info('Too many matches found. Please enter a more specific name.')
