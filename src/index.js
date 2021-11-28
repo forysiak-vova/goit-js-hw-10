@@ -12,7 +12,7 @@ const DEBOUNCE_DELAY = 300;
 const input = document.querySelector('#search-box');
 const list = document.querySelector('.country-list');
 const container = document.querySelector('.country-info');
-const name = document.querySelector('.languages-name');
+
 
 
 input.addEventListener('input', debounce(onSearch, DEBOUNCE_DELAY));
@@ -35,7 +35,17 @@ function onSearch(e) {
 function onFechSucces(contry) {
    const markup = countriesHbs(contry);
    const markupContry = countryHbs(contry);
-
+   console.log(contry)
+   const res = contry.map(el =>
+      `<ul class = "list">
+      <img src= ${el.flags.png}/>
+      <h2>${el.name}</h2>
+      <li>  ${el.capital}  </li>
+      <li>${el.population}</li>
+      <li></li>
+      </ul>`)
+   console.log(res)
+   
    if (contry.length > 10) {
       return Notiflix.Notify.info('Too many matches found. Please enter a more specific name.')
       
@@ -50,7 +60,7 @@ function onFechSucces(contry) {
    
    else if (contry.length === 1) {
       container.innerHTML = markupContry;
-     
+     list.insertAdjacentHTML('beforeend',res)
    
    } 
 }
@@ -64,3 +74,10 @@ function onFechError(error) {
 }
 
 // fetch('https://restcountries.com/v2/all?pageSize=10&page=1&fields=name,capital,population,flags,languagesand').then(response => response.json()).then(console.log)
+
+
+
+
+
+
+

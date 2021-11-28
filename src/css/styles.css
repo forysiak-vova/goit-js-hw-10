@@ -43,3 +43,6 @@ body {
 .contry-img {
   margin-right: 10px;
 }
+.list {
+  list-style: none;
+}
