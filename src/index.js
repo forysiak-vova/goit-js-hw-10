@@ -35,7 +35,7 @@ function onSearch(e) {
 function onFechSucces(contry) {
    const markup = countriesHbs(contry);
    const markupContry = countryHbs(contry);
-   console.log(contry)
+   // console.log(contry)
    // const res = contry.map(el =>
    //    `<ul class = "list">
    //    <img src= ${el.flags.png}/>
@@ -60,7 +60,7 @@ function onFechSucces(contry) {
    
    else if (contry.length === 1) {
       container.innerHTML = markupContry;
-     list.insertAdjacentHTML('beforeend',res)
+   //   list.insertAdjacentHTML('beforeend',res)
    
    } 
 }
